@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ProfileForm from '@/components/ProfileForm';
-import ProfileModal from '@/components/ProfileModal';
+import ProfileForm from '../components/ProfileForm';
+import ProfileModal from '../components/ProfileModal';
 import { FaUserCircle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
-import { admin, profile } from '@/assets/images';
+import { admin, profile } from '../assets/images';
 
 const ProfilePage = () => {
   const [showModal, setShowModal] = useState(false);

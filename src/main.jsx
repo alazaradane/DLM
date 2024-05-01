@@ -8,10 +8,10 @@ import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PrimeReactProvider>
+    
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </PrimeReactProvider> 
+
   </React.StrictMode>,
 )

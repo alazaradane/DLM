@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/Card'
-import { dashboardData } from '../Constants'
+import { dashboardData } from '../constants'
 import { dashboardIcon } from '../assets/images/index'
 
 const Dashboard = () => {

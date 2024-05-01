@@ -11,9 +11,9 @@ import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { Dialog } from 'primereact/dialog';
-import StudentModal from '@/components/StudentModal'
-import { initalDataStud } from '@/Constants'
-import EditStudentFormModal from '@/components/EditStudentFormModal'
+import StudentModal from '../components/StudentModal'
+import {initalDataStud}  from '../constants'
+import EditStudentFormModal from '../components/EditStudentFormModal'
         
 
 const Students = () => {
