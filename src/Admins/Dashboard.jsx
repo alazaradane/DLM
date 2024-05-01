@@ -6,16 +6,7 @@ import { dashboardIcon } from '../assets/images/index'
 
 
 const Dashboard = () => {
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May'],
-    datasets: [
-        {
-            label: 'Sales',
-            data: [100, 200, 150, 400, 250],
-            backgroundColor: '#42A5F5',
-        },
-    ],
-};
+  
   return (
     <section className=' flex flex-col p-5'>
       <div className=' flex items-center gap-3 mt-10 ml-6'>
