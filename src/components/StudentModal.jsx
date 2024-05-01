@@ -15,20 +15,20 @@ const StudentModal = ({ rowData, onClose }) => {
           <input id="name" value={rowData.name} disabled />
         </div>
         <div className="p-field flex items-center justify-between gap-6">
-          <label htmlFor="student_id" className=" font-bold ">Student ID</label>
-          <input id="student_id" value={rowData.student_id} disabled />
+          <label htmlFor="student_id" className=" font-bold "> Email</label>
+          <input id="student_id" value={rowData.email} disabled />
         </div>
         <div className="p-field flex items-center justify-between">
-          <label htmlFor="email" className=" font-bold ">Email</label>
-          <input id="email" value={rowData.email} disabled />
+          <label htmlFor="email" className=" font-bold ">Password</label>
+          <input id="email" value={rowData.password} disabled />
         </div>
         <div className="p-field flex items-center justify-between">
-          <label htmlFor="grade" className=" font-bold ">Grade</label>
-          <input id="grade" value={rowData.grade} disabled />
+          <label htmlFor="grade" className=" font-bold ">Status</label>
+          <input id="grade" value={rowData.status} disabled />
         </div>
         <div className="p-field flex items-center justify-between">
-          <label htmlFor="section" className=" font-bold ">Section</label>
-          <input id="section" value={rowData.section} disabled />
+          <label htmlFor="section" className=" font-bold ">Joined Date</label>
+          <input id="section" value={rowData.join} disabled />
         </div>
       </div>
     </Dialog>

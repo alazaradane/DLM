@@ -1,75 +1,157 @@
-import React, { useState } from 'react';
+import React from 'react'
 
+import { DataTable} from 'primereact/datatable'
+import { Column } from 'primereact/column'
+import { useState, useRef } from 'react'
+import { FilterMatchMode } from 'primereact/api'
+import { InputText } from 'primereact/inputtext'
+import { student } from '../assets/images/index'
+import { FileUpload } from 'primereact/fileupload';
+import { Toast } from 'primereact/toast';
+import { Button } from 'primereact/button';
+import { TieredMenu } from 'primereact/tieredmenu';
+import { Dialog } from 'primereact/dialog';
+import StudentModal from '../components/StudentModal'
+import {initalBook, initalDataStud}  from '../constants'
+import EditStudentFormModal from '../components/EditStudentFormModal'
+        
 
-const Section = () => {
-  const [gradeLevel, setGradeLevel] = useState('');
-  const [section, setSection] = useState('');
-  const [sections, setSections] = useState([]);
-  const [idCounter, setIdCounter] = useState(1);
+const Books = () => {
 
-  const gradeLevels = Array.from({ length: 12 }, (_, i) => i + 1);
-  const sectionsArray = Array.from({ length: 8 }, (_, i) => String.fromCharCode(65 + i)); // ASCII values for A to H
-
-  const handleAddSection = () => {
-    if (gradeLevel && section) {
-      const newSection = {
-        id: idCounter,
-        gradeLevel: parseInt(gradeLevel),
-        section
-      };
-      setSections([...sections, newSection]);
-      setGradeLevel('');
-      setSection('');
-      setIdCounter(idCounter + 1);
-    }
+  const [dataStud, setDataStud] = useState(initalBook);
+  const onDeleteRow = (rowData) => {
+        setDataStud(prevData => prevData.filter(student => student.id !== rowData.id));
   };
 
-  const handleRemoveSection = (id) => {
-    const updatedSections = sections.filter(sec => sec.id !== id);
-    setSections(updatedSections);
+  const [studentModalVisible, setStudentModalVisible] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState('');
+
+
+  const menu = useRef(null);
+    const items = [
+        {
+            label: 'File',
+            icon: 'pi pi-file',
+            items: [
+                {
+                    label: 'Add',
+                    icon: 'pi pi-plus',
+                },
+                {
+                    label: 'Import',
+                    icon: 'pi pi-folder-open',
+                    url:'https://localhost:3001/import'
+                },
+                {
+                    label: 'Export',
+                    icon: 'pi pi-folder'
+                }
+            ]
+        },
+        {
+            label: 'Print',
+            icon: 'pi pi-print',
+
+        },
+        
+        
+    ];
+
+    const [filters, setFilters] = useState({
+      global: {value:null, matchMode: FilterMatchMode.CONTAINS}
+    })
+    const [selectedStudents, setSelectedStudents] = useState([]);
+    const [formModal, setFormModal] = useState(false)
+
+    const onEditRow = (rowData) => {
+      setSelectedStudent(rowData);
+      setFormModal(true);
   };
 
+  const onSaveEdit = (updatedStudent) => {
+      const updatedData = dataStud.map(student => {
+          if (student.id === updatedStudent.id) {
+              return { ...student, ...updatedStudent };
+          }
+          return student;
+      });
+      setDataStud(updatedData);
+      setFormModal(false);
+  };
+
+    const onSelectionChange = (e) => {
+      setSelectedStudents(e.value);
+     }
+     
+    
   return (
-    <div className="section-container p-5">
-      <h2 className=' text-2xl font-bold my-5'>Sections</h2>
-      <table className="section-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Grade</th>
-            <th>Section</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sections.map(sec => (
-            <tr key={sec.id}>
-              <td>{sec.id}</td>
-              <td>{sec.gradeLevel}</td>
-              <td>{sec.section}</td>
-              <td>
-                <button onClick={() => handleRemoveSection(sec.id)}>Remove</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <br />
-      <select className="grade-dropdown" value={gradeLevel} onChange={(e) => setGradeLevel(e.target.value)}>
-        <option value="">Select Grade Level</option>
-        {gradeLevels.map((level) => (
-          <option key={level} value={level}>{level}</option>
-        ))}
-      </select>
-      <select className="section-dropdown" value={section} onChange={(e) => setSection(e.target.value)}>
-        <option value="">Select Section</option>
-        {sectionsArray.map((sec) => (
-          <option key={sec} value={sec}>{sec}</option>
-        ))}
-      </select>
-      <button className="add-button bg-black" onClick={handleAddSection}>Add Section</button>
-    </div>
-  );
-};
+    <section className=' container mt-20'>
+       
+  
+      <div className=' flex items-center gap-3'>
+        <img src={student} alt='student' width={60} height={60} />
+        <h1 className=' text-3xl font-serif font-bold'>Books</h1>
+      </div>
+      <div className=' mt-10'>
+        
+        <div className=' flex items-center justify-between'>
+          <div>
+            <InputText
+              onInput={(e)=>{
+                setFilters({
+                  global: {value: e.target.value, matchMode: FilterMatchMode.CONTAINS}
+                })
+              }}
+              placeholder='Search...'
+              className=' mt-5 px-2 py-1 shadow-mg rounded-sm'
+            />
+        </div>
+        <div className="card flex justify-content-center"> 
+              <TieredMenu model={items} popup ref={menu} breakpoint="767px" />
+              <Button label="Actions" onClick={(e) => menu.current.toggle(e)} className=' mr-15 bg-purple-800 text-white px-2 py-1' />
+        </div>
+        </div>
+        <div className=' mt-5'>
+          <DataTable value={dataStud} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
+            paginator
+            rows={20}
+            rowsPerPageOptions={[1,2,3,4,5,6,7,8,9]}
+            totalRecords={5} >
+            <Column selectionMode="multiple" style={{ width: '3em', border:'1rem', borderColor:"#000" }} />
+            <Column field='id' header='ID' sortable />
+            <Column field='name' header='Name' sortable editor={(props) => inputTextEditor(props, 'name')}  />
+            <Column field='category' header='Category' sortable/>
+            <Column field='description' header='Description' sortable/>
+            <Column field='file' header='File' sortable/>
+            {/* <Column field='section' header='Section' sortable/> */}
+            <Column rowEditor header='Actions' body={(rowData) => (
+              <div className='flex items-center gap-2'>
+                <i className='pi pi-eye text-blue-500' 
+                   onClick={() => {
+                    setStudentModalVisible(true);
+                    setSelectedStudent(rowData); 
+                  }}/>
+                <i className='pi pi-pencil text-yellow-500' onClick={() => onEditRow(rowData)}/>
+                <i className='pi pi-trash text-red-500' onClick={() => onDeleteRow(rowData)}/>
+              </div>
+)           } />
+          </DataTable>
+          <Dialog visible={studentModalVisible} header='Student Details' onHide={() => setStudentModalVisible(false)}>
+            <StudentModal rowData={selectedStudent} />
+          </Dialog>
+          <div>
+            <EditStudentFormModal
+                visible={formModal}
+                onHide={() => setFormModal(false)}
+                onSave={onSaveEdit}
+                studentData={selectedStudent}
+            />
+        </div>
+          
+        </div>
+      </div>      
+    </section>
+  )
+}
 
-export default Section;
+export default Books

@@ -22,13 +22,13 @@ const Sidebar = () => {
           <div className=' w-full  '>
             <Link to={'/admin/students'} className='flex items-center gap-3  '>
                 <img src={student} width={30} height={30}/>
-                <span className=' text-lg font-bold font-roboto'>Student</span>
+                <span className=' text-lg font-bold font-roboto'>Users</span>
             </Link>
           </div>
           <div className=' w-full '>
             <Link to={'/admin/section'} className='flex items-center gap-3  '>
                 <img src={section} width={30} height={30}/>
-                <span className='text-lg font-bold font-roboto'>Section</span>
+                <span className='text-lg font-bold font-roboto'>Books</span>
             </Link>
           </div>
           <div className=' w-full   '>
