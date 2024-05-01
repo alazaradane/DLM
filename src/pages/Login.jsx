@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { logo } from '../assets/images'
+import { Logo } from '../assets/images/index'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
               className="mx-auto h-45 w-auto -mt-10"
-              src={logo}
+              src={Logo}
               alt="Logo"
             />
             <h2 className="mt-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
