@@ -22,7 +22,6 @@ const Admin = () => {
         <Sidebar/>
       </div>
       <div className=' w-[80%] bg-slate-50'>
-      {/* {loginSuccess && <Success title="Welcome" text="You have successfully logged in!" />} */}
         <Routes>
           <Route path='dashboard' element={<Dashboard/>}/>
           <Route path='students' element={<Students/>}/>

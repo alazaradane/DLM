@@ -114,8 +114,8 @@ const Students = () => {
         <div className=' mt-5'>
           <DataTable value={dataStud} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
             paginator
-            rows={1}
-            rowsPerPageOptions={[1,2,3,4,5,6,7,8,9,10]}
+            rows={20}
+            rowsPerPageOptions={[1,2,3,4,5,6,7,8,9]}
             totalRecords={5} >
             <Column selectionMode="multiple" style={{ width: '3em', border:'1rem', borderColor:"#000" }} />
             <Column field='id' header='ID' sortable />
@@ -124,7 +124,7 @@ const Students = () => {
             <Column field='email' header='Email' sortable/>
             <Column field='grade' header='Grade' sortable/>
             <Column field='section' header='Section' sortable/>
-            <Column rowEditor field={'Actions'} header='Actions' body={(rowData) => (
+            <Column rowEditor header='Actions' body={(rowData) => (
               <div className='flex items-center gap-2'>
                 <i className='pi pi-eye text-blue-500' 
                    onClick={() => {
