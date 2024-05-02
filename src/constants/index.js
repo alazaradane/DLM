@@ -1,5 +1,5 @@
 
-import { school, section, student } from "../assets/images";
+import { school, section, student, user1, user2 } from "../assets/images";
 
 // Dashboard data report
 export const dashboardData = [
@@ -19,8 +19,8 @@ export const errorMessage = [
 ]
 
 export const initalDataStud = [
-    {id: 1, name:'alazar', password:'LIA-163264' ,email:'alazar@gmail.com',status:'Active', join:'2024-25-05'},
-    {id: 2, name:'nebyu', password:'LIA-53251' ,email:'nebyu@gmail.com',status:'not paid', join:"2022-15-09"}, 
+    {id: 1, image:user1, name:'alazar', password:'LIA-163264' ,email:'alazar@gmail.com',status:'Active', join:'2024-25-05'},
+    {id: 2, image:user2, name:'nebyu', password:'LIA-53251' ,email:'nebyu@gmail.com',status:'not paid', join:"2022-15-09"}, 
     {id: 3, name:'mikial', password:'LIA-436392',email:'miki@gmail.com',status:'Active', join:"2024-25-05"},
     {id: 4, name:'ahmed', password:'LIA-462746',email:'ahmed@gmail.com',status:'Active', join:"2024-25-05"},
     {id: 5, name:'human', password:'LIA-462746',email:'human@gmail.com',status:'not paid', join:"2024-25-05"},

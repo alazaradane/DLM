@@ -7,6 +7,11 @@ import profile from '../images/profile.png'
 import school from '../images/class.png'
 import admin from '../images/admin.png'
 import logout from '../images/logout.png'
+import user1 from '../images/user1.jpeg'
+import user2 from '../images/user2.jpeg'
+import user3 from '../images/user3.jpeg'
+import user4 from '../images/user4.jpeg'
+import user5 from '../images/user5.jpeg'
 
 
 
@@ -19,5 +24,10 @@ export{
     profile,
     school,
     admin,
-    logout
+    logout,
+    user1,
+    user2,
+    user3,
+    user4,
+    user5
 }
