@@ -1,5 +1,5 @@
 
-import { school, section, student, user1, user2 } from "../assets/images";
+import { school, section, student, user1, user2,user3,user4,user5 } from "../assets/images";
 
 // Dashboard data report
 export const dashboardData = [
@@ -21,20 +21,20 @@ export const errorMessage = [
 export const initalDataStud = [
     {id: 1, image:user1, name:'alazar', password:'LIA-163264' ,email:'alazar@gmail.com',status:'Active', join:'2024-25-05'},
     {id: 2, image:user2, name:'nebyu', password:'LIA-53251' ,email:'nebyu@gmail.com',status:'not paid', join:"2022-15-09"}, 
-    {id: 3, name:'mikial', password:'LIA-436392',email:'miki@gmail.com',status:'Active', join:"2024-25-05"},
-    {id: 4, name:'ahmed', password:'LIA-462746',email:'ahmed@gmail.com',status:'Active', join:"2024-25-05"},
-    {id: 5, name:'human', password:'LIA-462746',email:'human@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 6, name:'unkown', password:'LIA-423746',email:'unkown@gmail.com',status:'Active', join:"2024-25-05"},
-    {id: 7, name:'name', password:'LIA-465746',email:'name@gmail.com',status:'Active', join:"2024-25-05"},
-    {id: 8, name:'dagi', password:'LIA-462396',email:'dagi@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 9, name:'bini', password:'LIA-292746',email:'bini@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 10, name:'ephriem', password:'LIA-469646',email:'ephriem@gmail.com',status:'Active', join:"2024-25-05"},
-    {id: 11, name:'nati', password:'LIA-462486',email:'nati@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 12, name:'yeabsra', password:'LIA-342591',email:'yeabsra@gmail.com',status:'not paid2', join:"2024-25-05"},
-    {id: 13, name:'brook', password:'LIA-469346',email:'brook@gmail.com',status:'active', join:"2024-25-05"},
-    {id: 14, name:'kidus', password:'LIA-4696346',email:'kidus@gmail.com',status:'active', join:"2024-25-05"},
-    {id: 15, name:'abel', password:'LIA-723057',email:'abel@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 16, name:'yoda', password:'LIA-924042',email:'yoda@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 3, image:user3, name:'mikial', password:'LIA-436392',email:'miki@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 4, image:user4,name:'ahmed', password:'LIA-462746',email:'ahmed@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 5, image:user5,name:'human', password:'LIA-462746',email:'human@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 6, image:user2,name:'unkown', password:'LIA-423746',email:'unkown@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 7, image:user1,name:'name', password:'LIA-465746',email:'name@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 8, image:user3,name:'dagi', password:'LIA-462396',email:'dagi@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 9, image:user4,name:'bini', password:'LIA-292746',email:'bini@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 10, image:user3,name:'ephriem', password:'LIA-469646',email:'ephriem@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 11, image:user5,name:'nati', password:'LIA-462486',email:'nati@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 12, image:user5,name:'yeabsra', password:'LIA-342591',email:'yeabsra@gmail.com',status:'not paid2', join:"2024-25-05"},
+    {id: 13, image:user3,name:'brook', password:'LIA-469346',email:'brook@gmail.com',status:'active', join:"2024-25-05"},
+    {id: 14, image:user2,name:'kidus', password:'LIA-4696346',email:'kidus@gmail.com',status:'active', join:"2024-25-05"},
+    {id: 15, image:user1,name:'abel', password:'LIA-723057',email:'abel@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 16, image:user3,name:'yoda', password:'LIA-924042',email:'yoda@gmail.com',status:'not paid', join:"2024-25-05"},
 ]
 
 export const initalBook = [
