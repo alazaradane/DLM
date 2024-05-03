@@ -5,7 +5,7 @@ import { Button } from "primereact/button";
 
 const EditStudentFormModal = ({ visible, onHide, onSave, studentData }) => {
     const [editedStudentData, setEditedStudentData] = useState({ ...studentData }); 
-
+    
     useEffect(() => {
         
         setEditedStudentData({ ...studentData });
@@ -22,10 +22,28 @@ const EditStudentFormModal = ({ visible, onHide, onSave, studentData }) => {
     const handleSave = () => {
         onSave(editedStudentData);
     };
+    const handleFileUpload = (event) => {
+        const file = event.target.files[0];
+        const imageURL = URL.createObjectURL(file);
+        setEditedStudentData({ ...studentData, image: imageURL });
+      };
 
     return (
         <Dialog visible={visible} onHide={onHide} header='Edit Student'>
             <div className='p-grid p-fluid'>
+                <div className='p-col-13 gap-5 mb-3 flex flex-col items-center justify-center'>
+                    <img name='photo' src={editedStudentData.image} onChange={handleInputChange} className=" mt-2 border-1 px-2 py-1 w-20 h-20 rounded-full "  />
+                    <label className="inline-block bg-indigo-800 text-white rounded-md px-2 py-1 mt-4 cursor-pointer">
+                        <span className="block">Choose Photo</span>
+                        <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileUpload}
+                        className="hidden"
+                        />
+                    </label>
+
+                </div>
                 <div className='p-col-13 gap-5 mb-3'>
                     <label className=" font-bold text-slate ">Name</label>
                     <InputText name='name' value={editedStudentData.name} onChange={handleInputChange} className=" mt-2 border-1 px-2 py-1 "  />

@@ -150,7 +150,7 @@ const Books = () => {
                 visible={formModal}
                 onHide={() => setFormModal(false)}
                 onSave={onSaveEdit}
-                studentData={selectedStudent}
+                bookData={selectedStudent}
             />
         </div>
           
