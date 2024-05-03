@@ -1,5 +1,8 @@
 
 import { book1, book2,book3, school, section, student, user1, user2,user3,user4,user5 } from "../assets/images";
+import { CloudArrowUpIcon,LockClosedIcon,ArrowPathIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
+
+
 
 // Dashboard data report
 export const dashboardData = [
@@ -17,6 +20,50 @@ export const successMessage = [
 export const errorMessage = [
     {main: 'Error', detail: 'Something went wrong'}   
 ]
+
+//Navigation
+export const navigation = [
+    { name: 'Product', href: '#' },
+    { name: 'Features', href: '#' },
+    { name: 'Marketplace', href: '#' },
+    { name: 'Company', href: '#' },
+  ]
+
+//feature 
+export const features = [
+    {
+      name: 'Push to deploy',
+      description:
+        'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+      icon: CloudArrowUpIcon,
+    },
+    {
+      name: 'SSL certificates',
+      description:
+        'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+      icon: LockClosedIcon,
+    },
+    {
+      name: 'Simple queues',
+      description:
+        'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      icon: ArrowPathIcon,
+    },
+    {
+      name: 'Advanced security',
+      description:
+        'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      icon: FingerPrintIcon,
+    },
+  ]
+
+//Pricing
+export const includedFeatures = [
+    'Private forum access',
+    'Member resources',
+    'Entry to annual conference',
+    'Official member t-shirt',
+  ]
 
 export const initalDataStud = [
     {id: 1, image:user1, name:'alazar', password:'LIA-163264' ,email:'alazar@gmail.com',status:'Active', join:'2024-25-05'},
