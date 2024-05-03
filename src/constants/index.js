@@ -1,5 +1,5 @@
 
-import { school, section, student, user1, user2,user3,user4,user5 } from "../assets/images";
+import { book1, book2,book3, school, section, student, user1, user2,user3,user4,user5 } from "../assets/images";
 
 // Dashboard data report
 export const dashboardData = [
@@ -38,18 +38,18 @@ export const initalDataStud = [
 ]
 
 export const initalBook = [
-    {id:1,name:'abcd', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:2,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
-    {id:3,name:'run', category:'general', description:'Best description book by abcd', file:'file'},
-    {id:4,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},
-    {id:5,name:'diary', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:6,name:'physics', category:'STEM', description:'Best description book by abcd', file:'file'},
-    {id:7,name:'the bird', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:8,name:'life', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:9,name:'G-5', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:10,name:'under', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:11,name:'Fire', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:12,name:'Cell', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:13,name:'Organic', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:14,name:'water', category:'fiction', description:'Best description book by abcd', file:'file'}
+    {id:1,image:book1, name:'abcd', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:2, image:book1,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
+    {id:3,image:book2,name:'run', category:'general', description:'Best description book by abcd', file:'file'},
+    {id:4,image:book1,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},
+    {id:5,image:book3,name:'diary', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:6,image:book2,name:'physics', category:'STEM', description:'Best description book by abcd', file:'file'},
+    {id:7,image:book1,name:'the bird', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:8,image:book3,name:'life', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:9,image:book2,name:'G-5', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:10,image:book1,name:'under', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:11,image:book3,name:'Fire', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:12,image:book2,name:'Cell', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:13,image:book1,name:'Organic', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:14,image:book3,name:'water', category:'fiction', description:'Best description book by abcd', file:'file'}
 ]

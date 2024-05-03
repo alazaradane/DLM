@@ -119,6 +119,11 @@ const Books = () => {
             totalRecords={5} >
             <Column selectionMode="multiple" style={{ width: '3em', border:'1rem', borderColor:"#000" }} />
             <Column field='id' header='ID' sortable />
+            <Column field='image' header='Image' body={
+              (rowData)=>(
+                <img src={rowData.image} className=' w-7 h-10'/>
+              )
+            } sortable />
             <Column field='name' header='Name' sortable editor={(props) => inputTextEditor(props, 'name')}  />
             <Column field='category' header='Category' sortable/>
             <Column field='description' header='Description' sortable/>
