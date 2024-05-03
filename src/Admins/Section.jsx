@@ -12,15 +12,15 @@ import { Button } from 'primereact/button';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { Dialog } from 'primereact/dialog';
 import StudentModal from '../components/StudentModal'
-import {initalBook, initalDataStud}  from '../constants'
-import EditStudentFormModal from '../components/EditStudentFormModal'
+import {initalBook}  from '../constants'
+import EditBookFormModal from '../components/EditBookFormModal'
         
 
 const Books = () => {
 
-  const [dataStud, setDataStud] = useState(initalBook);
+  const [dataBook, setdataBook] = useState(initalBook);
   const onDeleteRow = (rowData) => {
-        setDataStud(prevData => prevData.filter(student => student.id !== rowData.id));
+        setdataBook(prevData => prevData.filter(student => student.id !== rowData.id));
   };
 
   const [studentModalVisible, setStudentModalVisible] = useState(false);
@@ -69,13 +69,13 @@ const Books = () => {
   };
 
   const onSaveEdit = (updatedStudent) => {
-      const updatedData = dataStud.map(student => {
+      const updatedData = dataBook.map(student => {
           if (student.id === updatedStudent.id) {
               return { ...student, ...updatedStudent };
           }
           return student;
       });
-      setDataStud(updatedData);
+      setdataBook(updatedData);
       setFormModal(false);
   };
 
@@ -112,7 +112,7 @@ const Books = () => {
         </div>
         </div>
         <div className=' mt-5'>
-          <DataTable value={dataStud} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
+          <DataTable value={dataBook} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
             paginator
             rows={20}
             rowsPerPageOptions={[1,2,3,4,5,6,7,8,9]}
@@ -140,7 +140,7 @@ const Books = () => {
             <StudentModal rowData={selectedStudent} />
           </Dialog>
           <div>
-            <EditStudentFormModal
+            <EditBookFormModal
                 visible={formModal}
                 onHide={() => setFormModal(false)}
                 onSave={onSaveEdit}

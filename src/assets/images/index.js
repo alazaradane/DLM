@@ -12,6 +12,7 @@ import user2 from '../images/user2.jpeg'
 import user3 from '../images/user3.jpeg'
 import user4 from '../images/user4.jpeg'
 import user5 from '../images/user5.jpeg'
+import book1 from '../images/book1.jpeg'
 
 
 
@@ -29,5 +30,6 @@ export{
     user2,
     user3,
     user4,
-    user5
+    user5,
+    book1
 }
