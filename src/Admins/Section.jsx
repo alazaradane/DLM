@@ -11,9 +11,10 @@ import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { Dialog } from 'primereact/dialog';
-import StudentModal from '../components/StudentModal'
+import BookModal from '../components/BookModal'
 import {initalBook}  from '../constants'
 import EditBookFormModal from '../components/EditBookFormModal'
+
         
 
 const Books = () => {
@@ -23,7 +24,7 @@ const Books = () => {
         setdataBook(prevData => prevData.filter(student => student.id !== rowData.id));
   };
 
-  const [studentModalVisible, setStudentModalVisible] = useState(false);
+  const [BookModalVisible, setBookModalVisible] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState('');
 
 
@@ -133,7 +134,7 @@ const Books = () => {
               <div className='flex items-center gap-2'>
                 <i className='pi pi-eye text-blue-500' 
                    onClick={() => {
-                    setStudentModalVisible(true);
+                    setBookModalVisible(true);
                     setSelectedStudent(rowData); 
                   }}/>
                 <i className='pi pi-pencil text-yellow-500' onClick={() => onEditRow(rowData)}/>
@@ -141,8 +142,8 @@ const Books = () => {
               </div>
 )           } />
           </DataTable>
-          <Dialog visible={studentModalVisible} header='Student Details' onHide={() => setStudentModalVisible(false)}>
-            <StudentModal rowData={selectedStudent} />
+          <Dialog visible={BookModalVisible} header='Book Details' onHide={() => setBookModalVisible(false)}>
+            <BookModal rowData={selectedStudent} />
           </Dialog>
           <div>
             <EditBookFormModal
