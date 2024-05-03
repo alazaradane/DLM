@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../components/Card'
 import { dashboardData } from '../constants'
 import { dashboardIcon } from '../assets/images/index'
+import Charts from '../components/Chart'
 
 
 
@@ -17,6 +18,9 @@ const Dashboard = () => {
           {dashboardData.map((data)=>
             <Card src={data.imgURL} value={data.value} title={data.label}/>
         )}
+      </div>
+      <div>
+        <Charts/>
       </div>
     </section>
     

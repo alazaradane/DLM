@@ -90,7 +90,7 @@ const Students = () => {
   
       <div className=' flex items-center gap-3'>
         <img src={student} alt='student' width={60} height={60} />
-        <h1 className=' text-3xl font-serif font-bold'>Students</h1>
+        <h1 className=' text-3xl font-serif font-bold'>Users</h1>
       </div>
       <div className=' mt-10'>
         
@@ -114,17 +114,37 @@ const Students = () => {
         <div className=' mt-5'>
           <DataTable value={dataStud} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
             paginator
-            rows={1}
-            rowsPerPageOptions={[1,2,3,4,5,6,7,8,9,10]}
+            rows={20}
+            rowsPerPageOptions={[1,2,3,4,5,6,7,8,9]}
             totalRecords={5} >
             <Column selectionMode="multiple" style={{ width: '3em', border:'1rem', borderColor:"#000" }} />
             <Column field='id' header='ID' sortable />
+            <Column field='image' header='Photo' body={
+              (rowData)=>(
+                <img src={rowData.image} alt='Student' className='rounded-full w-7 h-7' />
+              )
+            } sortable />
             <Column field='name' header='Name' sortable editor={(props) => inputTextEditor(props, 'name')}  />
-            <Column field='student_id' header='Student ID' sortable/>
             <Column field='email' header='Email' sortable/>
-            <Column field='grade' header='Grade' sortable/>
-            <Column field='section' header='Section' sortable/>
-            <Column rowEditor field={'Actions'} header='Actions' body={(rowData) => (
+            <Column field='password' header='Password' sortable/>
+            <Column
+  field="status"
+  header="Status"
+  body={(rowData) => (
+    <span
+      className={`${
+        rowData.status === 'Active' ? 'inline-flex items-center rounded-[0.5rem] bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20' :
+        rowData.status === 'not paid' ? 'inline-flex items-center rounded-[0.4rem] bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' :
+        // Add more conditions for other status values
+        ''
+      }`}
+    >
+      {rowData.status}
+    </span>
+  )}
+/>
+            <Column field='join' header='Join Date' sortable/>
+            <Column rowEditor header='Actions' body={(rowData) => (
               <div className='flex items-center gap-2'>
                 <i className='pi pi-eye text-blue-500' 
                    onClick={() => {
