@@ -3,9 +3,9 @@ import { book1, book2,book3, school, section, student, user1, user2,user3,user4,
 
 // Dashboard data report
 export const dashboardData = [
-    { imgURL:student, value: '500', label: 'Students' },
-    { imgURL:school, value: '7', label: 'Class' },
-    { imgURL: section, value: '10', label: 'Sections' },
+    { imgURL:student, value: '6k+', label: 'Users' },
+    { imgURL:school, value: '30K+', label: 'Books' },
+    { imgURL: section, value: '117', label: 'Groups' },
 ];
 
 
