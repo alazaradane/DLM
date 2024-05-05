@@ -65,6 +65,26 @@ export const includedFeatures = [
     'Official member t-shirt',
   ]
 
+export const SITEMAP = [
+  {
+    title: "Company",
+    links: ["About Us", "Careers", "Our Team", "Projects"],
+  },
+  {
+    title: "Help Center",
+    links: ["Discord", "Twitter", "GitHub", "Contact Us"],
+  },
+  {
+    title: "Resources",
+    links: ["Blog", "Newsletter", "Free Products", "Affiliate Program"],
+  },
+  {
+    title: "Products",
+    links: ["Templates", "UI Kits", "Icons", "Mockups"],
+  },
+];
+
+
 export const initalDataStud = [
     {id: 1, image:user1, name:'alazar', password:'LIA-163264' ,email:'alazar@gmail.com',status:'Active', join:'2024-25-05'},
     {id: 2, image:user2, name:'nebyu', password:'LIA-53251' ,email:'nebyu@gmail.com',status:'not paid', join:"2022-15-09"}, 
