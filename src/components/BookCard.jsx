@@ -33,8 +33,8 @@ const BookCard = ({book, image, name, category, detail, author, handleAddToCart,
           <p className=' text-md text-slate-700 font-semibold font-sans pl-3'> {author}</p>
         </div>
         <div className=' px-3 py-2 flex justify-around items-center'>
-          <span className=' inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10'>{category}</span>
-          <button onClick={() => handleAddToCart(book.id)}>{inCart ? 'Added' : 'Add to Cart'}</button>
+          <span className=' inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-sm font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10'>{category}</span>
+          <button className=' text-indigo-800 font-roboto font-bold' onClick={() => handleAddToCart(book.id)}>{inCart ? 'Added' : 'Add to Cart'}</button>
         </div>
 
     </section>
