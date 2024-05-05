@@ -6,7 +6,7 @@ import Category from '../components/Category'
 import Banner from "./Banner";
 
 
-const BookSearch = () => {
+const BookSearch = ({cartCounter}) => {
     return (
       <section id="#search" className=" max-container flex flex-col mt-4 items-center  ">
         <div className=" max-container flex items-center gap-[10rem]">
@@ -18,7 +18,7 @@ const BookSearch = () => {
             <FaSearch/>
           </div>
           <div className=" flex items-center gap-3 ">
-            <ShoppingCartIcon itemCount={1}/>
+           { cartCounter && <ShoppingCartIcon itemCount={cartCounter}/>}
             <p className=" font-bold font-roboto">Hi, Alazar</p>
           </div>
         </div>
