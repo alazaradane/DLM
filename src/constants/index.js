@@ -111,7 +111,7 @@ export const initalDataStud = [
 ]
 
 export const initalBook = [
-    {id:1,image:book1, name:'abcd', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:1,image:book1, name:'Enceladus', category:'fiction', description:'Best description book by abcd', file:'file'},
     {id:2, image:book1,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
     {id:3,image:book2,name:'run', category:'general', description:'Best description book by abcd', file:'file'},
     {id:4,image:book1,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},

@@ -1,5 +1,6 @@
 import React from 'react'
 import BookSearch from '../components/BookSearch'
+import BookList from '../components/BookList'
 
 const Books = () => {
   return (
@@ -8,7 +9,7 @@ const Books = () => {
             <BookSearch/>
         </div>
         <div>
-          
+             <BookList/>
         </div>
     </section>
   )
