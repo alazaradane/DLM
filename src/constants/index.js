@@ -24,6 +24,8 @@ export const errorMessage = [
 //Navigation
 const isLogIn = true;
 
+
+
 export const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#feature' },
