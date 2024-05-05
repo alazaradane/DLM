@@ -7,6 +7,9 @@ const Books = () => {
         <div className=' flex  justify-center '> 
             <BookSearch/>
         </div>
+        <div>
+          
+        </div>
     </section>
   )
 }
