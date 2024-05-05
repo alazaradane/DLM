@@ -22,12 +22,16 @@ export const errorMessage = [
 ]
 
 //Navigation
+const isLogIn = true;
+
 export const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '#feature' },
+    {name: 'Books', href: isLogIn ? '/book' : '/login'},
+    { name: 'Join Us', href: '#news' },
   ]
+
+  
 
 //feature 
 export const features = [
