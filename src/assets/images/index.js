@@ -15,6 +15,7 @@ import user5 from '../images/user5.jpeg'
 import book1 from '../images/book1.jpeg'
 import book2 from '../images/book2.jpeg'
 import book3 from '../images/book3.jpeg'
+import banner from '../images/banner.png'
 
 
 
@@ -35,5 +36,6 @@ export{
     user5,
     book1,
     book2,
-    book3
+    book3,
+    banner
 }
