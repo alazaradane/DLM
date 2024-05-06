@@ -8,15 +8,22 @@ const Books = () => {
 
   const [cartItems, setCartItems] = useState({});
   const [searchField, setSearchField] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(null);
   
   const handleInputChange = (e) => {
     setSearchField(e.target.value);
    };
+  const handleCategoryChange = (category)=>{
+    setSelectedCategory(category)
+  }
 
   
-   const filterBooks = initalBook.filter(book => {
-    return book.name.toLowerCase().includes(searchField.toLowerCase());
+  const filteredBooks = initalBook.filter((book) => {
+    const searchQueryMatch = book.name.toLowerCase().includes(searchField.toLowerCase());
+    const categoryMatch = selectedCategory ? book.category === selectedCategory.name : true;
+    return searchQueryMatch && categoryMatch;
   });
+
   const handleAddToCart = (bookId) => {
     setCartItems(prevState => {
       if (prevState[bookId]) {
@@ -33,10 +40,10 @@ const Books = () => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch cartCounter={cartItemCount} onInputChange={handleInputChange}/>
+            <BookSearch cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange}/>
         </div>
         <div>
-             <BookList books={filterBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
+             <BookList books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
         </div>
     </section>
   )

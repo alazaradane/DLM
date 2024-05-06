@@ -113,7 +113,7 @@ export const initalDataStud = [
 export const initalBook = [
     {id:1,image:book1, name:'Enceladus', category:'fiction', description:'Best description book by abcd', file:'file'},
     {id:2, image:book1,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
-    {id:3,image:book2,name:'run', category:'general', description:'Best description book by abcd', file:'file'},
+    {id:3,image:book2,name:'run', category:'General', description:'Best description book by abcd', file:'file'},
     {id:4,image:book1,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},
     {id:5,image:book3,name:'diary', category:'fiction', description:'Best description book by abcd', file:'file'},
     {id:6,image:book2,name:'physics', category:'STEM', description:'Best description book by abcd', file:'file'},
@@ -125,4 +125,31 @@ export const initalBook = [
     {id:12,image:book2,name:'Cell', category:'fiction', description:'Best description book by abcd', file:'file'},
     {id:13,image:book1,name:'Organic', category:'fiction', description:'Best description book by abcd', file:'file'},
     {id:14,image:book3,name:'water', category:'fiction', description:'Best description book by abcd', file:'file'}
+]
+
+export const category = [
+  {
+    id: 0,
+    name: 'Category',
+  },
+  {
+    id: 1,
+    name: 'fiction',
+  },
+  {
+    id: 2,
+    name: 'STEM',
+  },
+  {
+    id: 3,
+    name: 'commic',
+  },
+  {
+    id: 4,
+    name: 'General',
+  },
+  {
+    id: 5,
+    name: 'self-help',
+  }
 ]
