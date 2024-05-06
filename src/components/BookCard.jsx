@@ -3,10 +3,17 @@ import { book1 } from '../assets/images'
 import { useState } from 'react';
 import BookQuickPage from './BookDetail';
 import { Link } from 'react-router-dom';
+import ExpandableText from './ExpandableText';
 
 const BookCard = ({book,  handleAddToCart, cartItems, onBookClick }) => {
 
+ 
+
+  if(!book){
+    return null
+  }
   const { id, name, image, category, author, description } = book;
+  console.log(book);
   
   const inCart = cartItems[book.id] ? true : false;
 
@@ -31,7 +38,11 @@ const BookCard = ({book,  handleAddToCart, cartItems, onBookClick }) => {
           </Link>
         </div>
         <div className=' flex items-start justify-start py-2 pl-3 pr-1'>
-          <p className=' text-md text-slate-700 font-sans'>{description}</p>
+          <p className=' text-md text-slate-700 font-sans'>
+            <ExpandableText>
+             {description}
+            </ExpandableText>
+          </p>
         </div>
         <div>
           <p className=' text-md text-slate-700 font-semibold font-sans pl-3'> {author}</p>

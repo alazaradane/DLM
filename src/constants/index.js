@@ -112,19 +112,19 @@ export const initalDataStud = [
 
 export const initalBook = [
     {id:1,image:book1, name:'Enceladus', category:'fiction', author:"Human Being",description:'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.', file:'file'},
-    {id:2, image:book1,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
-    {id:3,image:book2,name:'run', category:'General', description:'Best description book by abcd', file:'file'},
-    {id:4,image:book1,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},
-    {id:5,image:book3,name:'diary', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:6,image:book2,name:'physics', category:'STEM', description:'Best description book by abcd', file:'file'},
-    {id:7,image:book1,name:'the bird', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:8,image:book3,name:'life', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:9,image:book2,name:'G-5', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:10,image:book1,name:'under', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:11,image:book3,name:'Fire', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:12,image:book2,name:'Cell', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:13,image:book1,name:'Organic', category:'fiction', description:'Best description book by abcd', file:'file'},
-    {id:14,image:book3,name:'water', category:'fiction', description:'Best description book by abcd', file:'file'}
+    {id:2, image:book1,name:'book1', category:'self-help',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:3,image:book2,name:'run', category:'General',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:4,image:book1,name:'road', category:'commic',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:5,image:book3,name:'diary', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:6,image:book2,name:'physics', category:'STEM',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:7,image:book1,name:'the bird', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:8,image:book3,name:'life', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:9,image:book2,name:'G-5', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:10,image:book1,name:'under', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:11,image:book3,name:'Fire', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:12,image:book2,name:'Cell', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:13,image:book1,name:'Organic', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'},
+    {id:14,image:book3,name:'water', category:'fiction',author:"Human Being", description:'Best description book by abcd', file:'file'}
 ]
 
 export const category = [
