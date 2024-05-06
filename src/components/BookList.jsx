@@ -2,7 +2,7 @@ import React from "react";
 import { initalBook } from "../constants";
 import BookCard from "./BookCard";
 
-const BookList = ({cartItems, handleAddToCart, books})=> {
+const BookList = ({cartItems, handleAddToCart, books, onBookClick})=> {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -23,7 +23,8 @@ const BookList = ({cartItems, handleAddToCart, books})=> {
               category={book.category} 
               author={book.author} 
               detail={book.description}  
-              handleAddToCart={handleAddToCart} />
+              handleAddToCart={handleAddToCart}
+              onBookClick={()=>onBookClick(book.id)} />
           ))}
         </div>
       </div>

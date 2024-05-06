@@ -29,7 +29,7 @@ const isLogIn = true;
 export const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#feature' },
-    {name: 'Books', href: isLogIn ? '/book' : '/login'},
+    {name: 'Books', href: isLogIn ? '/books' : '/login'},
     { name: 'Join Us', href: '#news' },
   ]
 

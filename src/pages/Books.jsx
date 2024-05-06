@@ -3,12 +3,15 @@ import BookSearch from '../components/BookSearch'
 import BookList from '../components/BookList'
 import { useState } from 'react'
 import { initalBook } from '../constants'
+import { useNavigate } from 'react-router-dom'
 
 const Books = () => {
 
   const [cartItems, setCartItems] = useState({});
   const [searchField, setSearchField] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate();
+  
   
   const handleInputChange = (e) => {
     setSearchField(e.target.value);
@@ -16,7 +19,7 @@ const Books = () => {
   const handleCategoryChange = (category)=>{
     setSelectedCategory(category)
   }
-
+  
   
   const filteredBooks = initalBook.filter((book) => {
     const searchQueryMatch = book.name.toLowerCase().includes(searchField.toLowerCase());
@@ -35,6 +38,11 @@ const Books = () => {
       }
     });
   };
+
+  const handleBookClick  = (bookId)=>{
+    navigate(`/${bookId}`)
+  }
+
   const cartItemCount = Object.keys(cartItems).length;
 
   return (
@@ -43,7 +51,7 @@ const Books = () => {
             <BookSearch cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange}/>
         </div>
         <div>
-             <BookList books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
+             <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
         </div>
     </section>
   )
