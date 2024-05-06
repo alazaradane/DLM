@@ -1,17 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { initalBook } from '../constants';
+import PageNotFound from './PageNotFound';
 
 const BookDetail = () => {
-  // Get the bookId from the URL params
   const { bookId } = useParams();
-
-  // Find the book with the matching ID
   const book = initalBook.find((book) => book.id === parseInt(bookId));
 
   if (!book) {
-    // If the book is not found, display a message
-    return <div>Book not found!</div>;
+    return <div className=' -mt-[7rem]'>
+      <PageNotFound/>
+      </div>;
   }
 
   return (

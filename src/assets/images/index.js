@@ -16,6 +16,7 @@ import book1 from '../images/book1.jpeg'
 import book2 from '../images/book2.jpeg'
 import book3 from '../images/book3.jpeg'
 import banner from '../images/banner.png'
+import error from '../images/404Error.png'
 
 
 
@@ -37,5 +38,6 @@ export{
     book1,
     book2,
     book3,
-    banner
+    banner,
+    error
 }
