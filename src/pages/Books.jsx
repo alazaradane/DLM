@@ -2,11 +2,21 @@ import React from 'react'
 import BookSearch from '../components/BookSearch'
 import BookList from '../components/BookList'
 import { useState } from 'react'
+import { initalBook } from '../constants'
 
 const Books = () => {
 
   const [cartItems, setCartItems] = useState({});
+  const [searchField, setSearchField] = useState('');
+  
+  const handleInputChange = (e) => {
+    setSearchField(e.target.value);
+   };
 
+  
+   const filterBooks = initalBook.filter(book => {
+    return book.name.toLowerCase().includes(searchField.toLowerCase());
+  });
   const handleAddToCart = (bookId) => {
     setCartItems(prevState => {
       if (prevState[bookId]) {
@@ -23,10 +33,10 @@ const Books = () => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch cartCounter={cartItemCount}/>
+            <BookSearch cartCounter={cartItemCount} onInputChange={handleInputChange}/>
         </div>
         <div>
-             <BookList handleAddToCart={handleAddToCart} cartItems={cartItems}/>
+             <BookList books={filterBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
         </div>
     </section>
   )
