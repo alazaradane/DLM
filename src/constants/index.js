@@ -29,7 +29,7 @@ const isLogIn = true;
 export const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#feature' },
-    {name: 'Books', href: isLogIn ? '/book' : '/login'},
+    {name: 'Books', href: isLogIn ? '/books' : '/login'},
     { name: 'Join Us', href: '#news' },
   ]
 
@@ -111,7 +111,7 @@ export const initalDataStud = [
 ]
 
 export const initalBook = [
-    {id:1,image:book1, name:'Enceladus', category:'fiction', description:'Best description book by abcd', file:'file'},
+    {id:1,image:book1, name:'Enceladus', category:'fiction', author:"Human Being",description:'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.', file:'file'},
     {id:2, image:book1,name:'book1', category:'self-help', description:'Best description book by abcd', file:'file'},
     {id:3,image:book2,name:'run', category:'General', description:'Best description book by abcd', file:'file'},
     {id:4,image:book1,name:'road', category:'commic', description:'Best description book by abcd', file:'file'},

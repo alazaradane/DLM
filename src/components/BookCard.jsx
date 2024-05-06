@@ -1,10 +1,12 @@
 import React from 'react'
 import { book1 } from '../assets/images'
 import { useState } from 'react';
+import BookQuickPage from './BookDetail';
+import { Link } from 'react-router-dom';
 
-const BookCard = ({book, image, name, category, detail, author, handleAddToCart, cartItems }) => {
+const BookCard = ({book,  handleAddToCart, cartItems, onBookClick }) => {
 
- 
+  const { id, name, image, category, author, description } = book;
   
   const inCart = cartItems[book.id] ? true : false;
 
@@ -24,10 +26,12 @@ const BookCard = ({book, image, name, category, detail, author, handleAddToCart,
           <img src={image} className=' rounded-[0.5rem]'/>
         </div>
         <div className='flex items-start justify-start'>
-          <p className=' pt-4 pl-3 text-xl font-bold font-sans'>{name}</p>
+          <Link to={`/books/${id}`}>
+            <p className=' pt-4 pl-3 text-xl font-bold font-sans' onClick={onBookClick}>{name}</p>
+          </Link>
         </div>
         <div className=' flex items-start justify-start py-2 pl-3 pr-1'>
-          <p className=' text-md text-slate-700 font-sans'>{detail}</p>
+          <p className=' text-md text-slate-700 font-sans'>{description}</p>
         </div>
         <div>
           <p className=' text-md text-slate-700 font-semibold font-sans pl-3'> {author}</p>
