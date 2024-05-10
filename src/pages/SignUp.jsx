@@ -29,7 +29,7 @@ const SignUp = () => {
         api.post('/user/signup', formData)
         .then(response => {
           console.log('Data sent successfully:', response.data);    
-          return navigate('/login')    
+          navigate('/login')    
         })
         .catch(error => {
           console.error('Error sending data:', error);

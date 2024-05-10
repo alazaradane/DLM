@@ -1,4 +1,4 @@
-// Cart.js
+
 import React from 'react';
 
 const Cart = ({ cartItems }) => {
@@ -16,7 +16,7 @@ const Cart = ({ cartItems }) => {
             <th scope='col' className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
               Price
             </th>
-            {/* Add more columns if needed */}
+            
           </tr>
         </thead>
         <tbody className='bg-white divide-y divide-gray-200'>

@@ -70,7 +70,7 @@ const Login = ({onLoginSuccess}) => {
 
           const userData = { name: response.data.name, email: response.data.email };
           onLoginSuccess(userData);
-          
+
           const role = response.data.role
           if (role === 'admin') {
             setLoginSuccess(true)
@@ -116,8 +116,8 @@ const Login = ({onLoginSuccess}) => {
   
                   </div>
             <div class="w-full h-screen mx-auto inset-0  px-20 flex-col items-center space-y-6  bg-cover bg-center " style={{ backgroundImage: "url('https://i.pinimg.com/564x/3d/8b/4c/3d8b4cfb3bed2977f971768ebb837e99.jpg')"}}>
-              <h1 class="text-white font-bold text-4xl font-sans mt-20">Lebawi</h1>
-              <p class="text-white mt-1">Teacher Evaluation System</p>
+              <h1 class="text-white font-bold text-4xl font-sans mt-20">BookSphere</h1>
+              <p class="text-white mt-1">Empower your mind with our Digital Library</p>
               <div class="flex justify-center lg:justify-start mt-6">
                   <a href="#" class="hover:bg-indigo-700 hover:text-white hover:-translate-y-1 transition-all duration-500 bg-white text-indigo-800 mt-4 px-4 py-2 rounded-2xl font-bold mb-2">Get Started</a>
               </div>
