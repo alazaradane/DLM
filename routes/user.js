@@ -20,7 +20,7 @@ router.post('/signup', (req, res) => {
         if (results.length > 0) {
             return res.status(400).json({ message: 'Email Already Exists.' });
         } else {
-            const insertQuery = "INSERT INTO user (name, contactNumber, email, password, status, role) VALUES (?, ?, ?, ?, 'false', 'user')";
+            const insertQuery = "INSERT INTO user (name, contactNumber, email, password, status, role) VALUES (?, ?, ?, ?, 'true', 'user')";
             connection.query(insertQuery, [user.name, user.contactNumber, user.email, user.password], (err, results) => {
                 if (!err) {
                     return res.status(200).json({ message: 'Successfully Registered.' });
@@ -34,7 +34,7 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', (req, res) => {
     const user = req.body;
-    const query = "SELECT email, password, role, status FROM user WHERE email=?";
+    const query = "SELECT email, password, name, role, status FROM user WHERE email=?";
     
     connection.query(query, [user.email], (err, result) => {
         if (err) {
@@ -49,10 +49,10 @@ router.post('/login', (req, res) => {
             return res.status(401).json({ message: "Wait for Admin Approval" });
         }
 
-        const { email, role } = result[0];
+        const { email, role, name } = result[0];
         const accessToken = jwt.sign({ email, role }, process.env.ACCESS_TOKEN, { expiresIn: '8h' });
 
-        res.status(200).json({ token: accessToken, role });
+        res.status(200).json({ token: accessToken, role:role, name: name, email: email });
     });
 });
 

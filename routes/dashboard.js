@@ -12,6 +12,7 @@ router.get('/details',auth.authenticateToken,(req,res,next)=>{
     connection.query(query,(err,results)=>{
         if(!err){
             categoryCount = results[0].categoryCount;
+            // return res.status(200).json(categoryCount)
         }
         else{
             return res.status(500).json(err);
@@ -22,6 +23,8 @@ router.get('/details',auth.authenticateToken,(req,res,next)=>{
     connection.query(query,(err,results)=>{
         if(!err){
             productCount = results[0].productCount;
+            // return res.status(200).json(productCount)
+
         }
         else{
             return res.status(500).json(err);
