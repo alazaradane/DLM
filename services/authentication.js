@@ -12,7 +12,7 @@ function authenticateToken(req, res, next) {
     if (err) {
       return res.sendStatus(403);
     }
-    res.locals.user = response; // Store the user data in res.locals
+    res.locals.user = response; 
     next();
   });
 }
