@@ -29,7 +29,7 @@ const isLogIn = true;
 export const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '#feature' },
-    {name: 'Books', href: isLogIn ? '/books' : '/login'},
+    {name: 'Books', href: !isLogIn ? '/books' : '/login'},
     { name: 'Join Us', href: '#news' },
   ]
 
@@ -103,9 +103,9 @@ export const initalDataStud = [
     {id: 9, image:user4,name:'bini', password:'LIA-292746',email:'bini@gmail.com',status:'not paid', join:"2024-25-05"},
     {id: 10, image:user3,name:'ephriem', password:'LIA-469646',email:'ephriem@gmail.com',status:'Active', join:"2024-25-05"},
     {id: 11, image:user5,name:'nati', password:'LIA-462486',email:'nati@gmail.com',status:'not paid', join:"2024-25-05"},
-    {id: 12, image:user5,name:'yeabsra', password:'LIA-342591',email:'yeabsra@gmail.com',status:'not paid2', join:"2024-25-05"},
-    {id: 13, image:user3,name:'brook', password:'LIA-469346',email:'brook@gmail.com',status:'active', join:"2024-25-05"},
-    {id: 14, image:user2,name:'kidus', password:'LIA-4696346',email:'kidus@gmail.com',status:'active', join:"2024-25-05"},
+    {id: 12, image:user5,name:'yeabsra', password:'LIA-342591',email:'yeabsra@gmail.com',status:'not paid', join:"2024-25-05"},
+    {id: 13, image:user3,name:'brook', password:'LIA-469346',email:'brook@gmail.com',status:'Active', join:"2024-25-05"},
+    {id: 14, image:user2,name:'kidus', password:'LIA-4696346',email:'kidus@gmail.com',status:'Active', join:"2024-25-05"},
     {id: 15, image:user1,name:'abel', password:'LIA-723057',email:'abel@gmail.com',status:'not paid', join:"2024-25-05"},
     {id: 16, image:user3,name:'yoda', password:'LIA-924042',email:'yoda@gmail.com',status:'not paid', join:"2024-25-05"},
 ]

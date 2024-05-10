@@ -23,3 +23,12 @@
 .border-main-color {
     border-color: var(--main-color);
 }
+
+#toast-success {
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    z-index: 9999; 
+    display: inline-flex; 
+    align-items: center; 
+}
