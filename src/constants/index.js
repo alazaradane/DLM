@@ -8,7 +8,7 @@ import { CloudArrowUpIcon,LockClosedIcon,ArrowPathIcon, FingerPrintIcon } from "
 export const dashboardData = [
     { imgURL:student, value: '6k+', label: 'Users' },
     { imgURL:school, value: '30K+', label: 'Books' },
-    { imgURL: section, value: '117', label: 'Groups' },
+    { imgURL: section, value: '117', label: 'Bills' },
 ];
 
 

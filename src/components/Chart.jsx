@@ -5,28 +5,33 @@ const Charts = () => {
     const data = [
         {
             "name": "January",
-            "uv": 2780,
-            "pv": 3908
+            "users": 2780,
+            "books": 3908,
+            "bills":3000
           },
           {
             "name": "February",
-            "uv": 1890,
-            "pv": 4800
+            "users": 1890,
+            "books": 4800,
+            "bills":3730
           },
         {
           "name": "April",
-          "uv": 4000,
-          "pv": 2400
+          "users": 4000,
+          "books": 2400,
+          "bills":2000
         },
         {
           "name": "March",
-          "uv": 3000,
-          "pv": 1398
+          "users": 3000,
+          "books": 1398,
+          "bills":2700
         },
         {
           "name": "May",
-          "uv": 2000,
-          "pv": 9800
+          "users": 2000,
+          "books": 9800,
+          "bills":2400
         }
         
         
@@ -42,8 +47,9 @@ const Charts = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
+        <Bar dataKey="books" fill="#8884d8" width={40}/>
+        <Bar dataKey="users" fill="#82ca9d" />
+        <Bar dataKey="bills" fill='#111827'/>
       </BarChart>
     </>
   )

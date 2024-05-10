@@ -6,7 +6,7 @@ import Category from '../components/Category'
 import Banner from "./Banner";
 
 
-const BookSearch = ({cartCounter, onInputChange, onCategoryChange }) => {
+const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategoryChange }) => {
     return (
       <section id="#search" className=" max-container flex flex-col mt-4 items-center  ">
         <div className=" max-container flex items-center gap-[10rem]">
@@ -19,7 +19,7 @@ const BookSearch = ({cartCounter, onInputChange, onCategoryChange }) => {
           </div>
           <div className=" flex items-center gap-3 ">
            { cartCounter && <ShoppingCartIcon itemCount={cartCounter}/>}
-            <p className=" font-bold font-roboto">Hi, Alazar</p>
+           {userName && <p className="font-bold font-roboto">Hi, {userName}</p>}
           </div>
         </div>
         <div className=" flex gap-[5rem]">

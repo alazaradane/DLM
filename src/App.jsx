@@ -6,15 +6,24 @@ import Home from './pages/Home'
 import Admin from './Admins/Admin'
 import Books from './pages/Books'
 import BookDetail from './components/BookDetail'
-
+import { useState } from 'react'
 const App = () => {
+
+  const [userData, setUserData] = useState({});
+
+
+    const handleLoginSuccess = (userData) => {
+        setUserData(userData);
+        }
+
+    
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' element={<Login onLoginSuccess={handleLoginSuccess} />} />
       <Route path='/register' element={<SignUp/>}/>
       <Route path='/admin/*' element={<Admin/>}/>
-      <Route path='/books' element={<Books/>}/>
+      <Route path='/books' element={<Books userName={userData.name} userEmail={userData.email}/>}/>
       <Route path="/books/:bookId" element={<BookDetail />} />
     </Routes>
   )

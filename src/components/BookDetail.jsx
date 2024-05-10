@@ -44,6 +44,8 @@ const BookDetail = () => {
    const handleCategoryChange = (category)=>{
     setSelectedCategory(category)
   }
+  const inCart = cartItems[book.id] ? true : false;
+
 
   return (
     <section id='bookdetail' className='py-5 px-[7rem]'>
@@ -65,8 +67,8 @@ const BookDetail = () => {
           <span className='inline-flex items-center rounded-md my-4 bg-gray-50 px-2 py-1 text-md font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10'>
             {book.category}
           </span>
-          <p>Description: {book.description}</p>
-          <button className='bg-indigo-800 py-1 px-5 text-white rounded-[0.3rem] mt-[1rem]'>Add to Cart</button>
+          <p>{book.description}</p>
+          <button className='bg-indigo-800 py-1 px-5 text-white rounded-[0.3rem] mt-[1rem]' onClick={() => handleAddToCart(book.id)}>{inCart ? 'Added' : 'Add to Cart'}</button>
         </div>
       </div>
       <div className='mt-10'>
@@ -85,7 +87,7 @@ const BookDetail = () => {
             author={moreBook.author} 
             detail={moreBook.description}  
             handleAddToCart={handleAddToCart}
-            onmoreBookClick={()=>onBookClick(book.id)}
+            onBookClick={()=>onBookClick(book.id)}
             />
           ))}
         </div>

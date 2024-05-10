@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Success from '../components/Success';
 import { successMessage } from '../constants';
 import { useNavigate } from 'react-router-dom';
+import api from '../api/api'
 
-const Login = () => {
+const Login = ({onLoginSuccess}) => {
 
     const [formData, setFormData] = useState({
         email: "",
@@ -51,21 +52,44 @@ const Login = () => {
         e.preventDefault();
     
         if (validateForm()) {
-          // Form is valid, you can submit or process the data here
           console.log("Form data:", formData);
-          setSubmitted(true); // Set a submitted flag
+          setSubmitted(true); 
           handleLogin();
         } else {
-          // Form is not valid, display error messages
+          console.log("Form validation failed");
         }
       };
     
       const isFormValid = Object.keys(errors).length === 0
 
       const handleLogin = () => {
-        setLoginSuccess(true)
-        setSubmitted(true)
-        navigate('/admin/dashboard')
+        api.post('/user/login', formData)
+        .then(response => {
+          console.log('Data sent successfully:', response.data);  
+          console.log(response)
+
+          const userData = { name: response.data.name, email: response.data.email };
+          onLoginSuccess(userData);
+
+          const role = response.data.role
+          if (role === 'admin') {
+            setLoginSuccess(true)
+            setSubmitted(true)
+            navigate('/admin/dashboard'); 
+          }
+          if (role === 'user') {
+            setLoginSuccess(true)
+            setSubmitted(true)
+            navigate('/books'); 
+          } else {
+            console.log('NOT ADMIN NOT USER')
+          }
+        })            
+        .catch(error => {
+          console.error('Error sending data:', error);
+        });
+
+        
       };
 
   return (
@@ -92,8 +116,8 @@ const Login = () => {
   
                   </div>
             <div class="w-full h-screen mx-auto inset-0  px-20 flex-col items-center space-y-6  bg-cover bg-center " style={{ backgroundImage: "url('https://i.pinimg.com/564x/3d/8b/4c/3d8b4cfb3bed2977f971768ebb837e99.jpg')"}}>
-              <h1 class="text-white font-bold text-4xl font-sans mt-20">Lebawi</h1>
-              <p class="text-white mt-1">Teacher Evaluation System</p>
+              <h1 class="text-white font-bold text-4xl font-sans mt-20">BookSphere</h1>
+              <p class="text-white mt-1">Empower your mind with our Digital Library</p>
               <div class="flex justify-center lg:justify-start mt-6">
                   <a href="#" class="hover:bg-indigo-700 hover:text-white hover:-translate-y-1 transition-all duration-500 bg-white text-indigo-800 mt-4 px-4 py-2 rounded-2xl font-bold mb-2">Get Started</a>
               </div>
