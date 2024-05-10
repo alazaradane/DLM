@@ -11,7 +11,10 @@ import CheckOut from './components/CheckOut'
 const App = () => {
 
   const [userData, setUserData] = useState({});
-
+  const [selectedBooks, setSelectedBooks] = useState([]);
+  const handleSelectedBooks = (book) => {
+    setSelectedBooks(book);
+  }
 
     const handleLoginSuccess = (userData) => {
         setUserData(userData);
@@ -24,9 +27,9 @@ const App = () => {
       <Route path='/login' element={<Login onLoginSuccess={handleLoginSuccess} />} />
       <Route path='/register' element={<SignUp/>}/>
       <Route path='/admin/*' element={<Admin/>}/>
-      <Route path='/books' element={<Books userName={userData.name} userEmail={userData.email}/>}/>
+      <Route path='/books' element={<Books userName={userData.name} userEmail={userData.email} onSelectedBooksChange={handleSelectedBooks}/>}/>
       <Route path="/books/:bookId" element={<BookDetail />} />
-      <Route path='/checkout' element={<CheckOut/>}/>
+      <Route path='/checkout' element={<CheckOut onCheckOutBook={selectedBooks}/>}/>
     </Routes>
   )
 }

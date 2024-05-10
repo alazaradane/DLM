@@ -7,9 +7,9 @@ import Banner from "./Banner";
 import CartModal from '../components/CartModal'
 import { useState } from "react";
 import { initalBook } from "../constants";
+import { useEffect } from "react";
 
-
-const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategoryChange, cartItems }) => {
+const BookSearch = ({ onSelectedBooksChange,userEmail, userName, cartCounter, onInputChange, onCategoryChange, cartItems }) => {
 
   
   const [selectedBooks, setSelectedBooks] = useState([]); 
@@ -23,8 +23,10 @@ const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategory
     });
     setSelectedBooks(selectedBookData);
   };
-  console.log(cartItems)
   
+  useEffect(() => {
+    onSelectedBooksChange(selectedBooks);
+  }, [selectedBooks]); 
 
   const handleCloseModal = () => {
     setShowModal(false);

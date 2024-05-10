@@ -6,7 +6,7 @@ import { initalBook } from '../constants'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../components/Spinner'
 
-const Books = ({userName, userEmail}) => {
+const Books = ({userName, userEmail, onSelectedBooksChange}) => {
 
   const [cartItems, setCartItems] = useState({});
   const [searchField, setSearchField] = useState('');
@@ -51,7 +51,7 @@ const Books = ({userName, userEmail}) => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch cartItems={cartItems} userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
+            <BookSearch onSelectedBooksChange={onSelectedBooksChange} cartItems={cartItems} userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
         </div>
         <div>         
             {userName && userEmail ? (
