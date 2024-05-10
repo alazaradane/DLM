@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Success from '../components/Success';
 import { successMessage } from '../constants';
 import { useNavigate } from 'react-router-dom';
+import api from '../api/api'
 
 const Login = () => {
 
@@ -51,21 +52,41 @@ const Login = () => {
         e.preventDefault();
     
         if (validateForm()) {
-          // Form is valid, you can submit or process the data here
           console.log("Form data:", formData);
-          setSubmitted(true); // Set a submitted flag
+          setSubmitted(true); 
           handleLogin();
         } else {
-          // Form is not valid, display error messages
+          console.log("Form validation failed");
         }
       };
     
       const isFormValid = Object.keys(errors).length === 0
 
       const handleLogin = () => {
-        setLoginSuccess(true)
-        setSubmitted(true)
-        navigate('/admin/dashboard')
+        api.post('/user/login', formData)
+        .then(response => {
+          console.log('Data sent successfully:', response.data);  
+          console.log(response)
+
+          const role = response.data.role
+          if (role === 'admin') {
+            setLoginSuccess(true)
+            setSubmitted(true)
+            navigate('/admin/dashboard'); 
+          }
+          if (role === 'user') {
+            setLoginSuccess(true)
+            setSubmitted(true)
+            navigate('/books'); 
+          } else {
+            console.log('NOT ADMIN NOT USER')
+          }
+        })            
+        .catch(error => {
+          console.error('Error sending data:', error);
+        });
+
+        
       };
 
   return (

@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { logo } from '../assets/images'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import axios from 'axios'
+import api from '../api/api'
 
 const SignUp = () => {
 
     const [formData, setFormData] = useState({
         name: '',
+        contactNumber:"",
         email:'',
         password: '',
       });
@@ -19,8 +23,22 @@ const SignUp = () => {
       };
       const handleSubmit = (e) => {
         e.preventDefault();
+        api.post('/user/signup', formData)
+        .then(response => {
+          console.log('Data sent successfully:', response.data);        
+        })
+        .catch(error => {
+          console.error('Error sending data:', error);
+        });
+
         console.log(formData)
       };
+
+
+      
+      
+
+
   return (
     <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -31,7 +49,7 @@ const SignUp = () => {
               alt="Logo"
             />
             <h2 className="mt-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Sign in to your account
+              Sign up to your account
             </h2>
           </div>
   
@@ -50,6 +68,23 @@ const SignUp = () => {
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     value={formData.name}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="phone_number" className="block text-sm font-medium leading-6 text-gray-900">
+                  Phone Number
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="contactNumber"
+                    name="contactNumber"
+                    type="number"
+                    autoComplete="contactNumber"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={formData.contactNumber}
                     onChange={handleChange}
                   />
                 </div>
