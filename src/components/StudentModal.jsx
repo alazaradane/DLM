@@ -27,8 +27,8 @@ const StudentModal = ({ rowData, onClose }) => {
           <input id="email" value={rowData.password} disabled />
         </div>
         <div className="p-field flex items-center justify-between gap-7">
-          <label htmlFor="grade" className=" font-bold ">Status</label>
-          <input id="grade" value={rowData.status} disabled />
+          <label htmlFor="status" className=" font-bold ">Status</label>
+          <input id="status" value={rowData.status} disabled />
         </div>
         <div className="p-field flex items-center justify-between gap-7">
           <label htmlFor="section" className=" font-bold ">Joined Date</label>

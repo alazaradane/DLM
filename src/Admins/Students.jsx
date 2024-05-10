@@ -14,7 +14,7 @@ import { Dialog } from 'primereact/dialog';
 import StudentModal from '../components/StudentModal'
 import {initalDataStud}  from '../constants'
 import EditStudentFormModal from '../components/EditStudentFormModal'
-        
+import AddUserModal from '../components/AddUserModal'
 
 const Students = () => {
 
@@ -25,6 +25,18 @@ const Students = () => {
 
   const [studentModalVisible, setStudentModalVisible] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState('');
+  const [addUserModal, setAddUserModal] = useState(false)
+  const [newStudentData, setNewStudentData] = useState({});
+
+  const onAddNewStudent = (newStudent) => {
+    setDataStud(prevData => [...prevData, newStudent]);
+    setNewStudentData(false); 
+  };
+
+  const onCancelAdd = () => {
+    setNewStudentData(false); 
+    setAddUserModal(false)
+  };
 
 
   const menu = useRef(null);
@@ -36,6 +48,7 @@ const Students = () => {
                 {
                     label: 'Add',
                     icon: 'pi pi-plus',
+                    command: () => setAddUserModal(true)
                 },
                 {
                     label: 'Import',
@@ -77,6 +90,7 @@ const Students = () => {
       });
       setDataStud(updatedData);
       setFormModal(false);
+      
   };
 
     const onSelectionChange = (e) => {
@@ -134,8 +148,7 @@ const Students = () => {
     <span
       className={`${
         rowData.status === 'Active' ? 'inline-flex items-center rounded-[0.5rem] bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20' :
-        rowData.status === 'not paid' ? 'inline-flex items-center rounded-[0.4rem] bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' :
-        // Add more conditions for other status values
+        rowData.status === 'not paid' ? 'inline-flex items-center rounded-[0.4rem]  bg-red-50 px-1 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' :
         ''
       }`}
     >
@@ -166,6 +179,15 @@ const Students = () => {
                 onSave={onSaveEdit}
                 studentData={selectedStudent}
             />
+        </div>
+        <div>
+        <AddUserModal
+          visible={addUserModal}
+          onAdd={onAddNewStudent}
+          onHide = { ()=>setAddUserModal(false)}
+          onCancel={onCancelAdd}
+          
+      />
         </div>
           
         </div>

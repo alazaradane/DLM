@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { initalBook } from '../constants'
 import { useNavigate } from 'react-router-dom'
 
-const Books = () => {
+const Books = ({userName, userEmail}) => {
 
   const [cartItems, setCartItems] = useState({});
   const [searchField, setSearchField] = useState('');
@@ -48,10 +48,15 @@ const Books = () => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange}/>
+            <BookSearch userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange}/>
         </div>
-        <div>
-             <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
+        <div>         
+            {/* <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} /> */}
+            {userName && userEmail ? (
+              <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
+                ) : (
+                <div>Loading...</div>
+            )}
         </div>
     </section>
   )

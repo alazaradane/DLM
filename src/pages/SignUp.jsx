@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
 import api from '../api/api'
+import { useNavigate } from 'react-router-dom'
+
+const navigate = useNavigate
 
 const SignUp = () => {
 
@@ -25,7 +28,8 @@ const SignUp = () => {
         e.preventDefault();
         api.post('/user/signup', formData)
         .then(response => {
-          console.log('Data sent successfully:', response.data);        
+          console.log('Data sent successfully:', response.data);    
+          return navigate('/login')    
         })
         .catch(error => {
           console.error('Error sending data:', error);

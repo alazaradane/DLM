@@ -6,7 +6,7 @@ import { successMessage } from '../constants';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api'
 
-const Login = () => {
+const Login = ({onLoginSuccess}) => {
 
     const [formData, setFormData] = useState({
         email: "",
@@ -68,6 +68,9 @@ const Login = () => {
           console.log('Data sent successfully:', response.data);  
           console.log(response)
 
+          const userData = { name: response.data.name, email: response.data.email };
+          onLoginSuccess(userData);
+          
           const role = response.data.role
           if (role === 'admin') {
             setLoginSuccess(true)
