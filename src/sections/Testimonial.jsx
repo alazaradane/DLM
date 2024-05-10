@@ -10,8 +10,8 @@ const Testimonial = () => {
           <figure className="mt-10">
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
               <p>
-                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+                "I've been a loyal customer of Librospher for years, and I can't recommend them enough! Their vast selection of books, combined with their excellent customer service,
+                 makes them my go-to bookstore for all my reading needs."
               </p>
             </blockquote>
             <figcaption className="mt-10">

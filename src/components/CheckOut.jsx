@@ -1,11 +1,26 @@
 import React from 'react'
+import { useState } from 'react';
+import SuccessToast from './SuccessToast';
+import '../index.css'
 
 const CheckOut = ({onCheckOutBook}) => {
     console.log(onCheckOutBook)
+    const [showToast, setShowToast] = useState(false);
+
+    const handlePlaceOrder = () => {
+        setShowToast(true);
+        setTimeout(() => {
+            setShowToast(false);
+        }, 3000);
+    };
 
   return (
     <div className="relative mx-auto w-full bg-white">
+        <div id='#toast-success' className=' flex items-end justify-end z-9999'>
+            {showToast && <SuccessToast />}
+        </div>
     <div className="grid min-h-screen grid-cols-10">
+
         <div className="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
         <div className="mx-auto w-full max-w-lg">
             <h1 className="relative text-2xl font-medium text-gray-700 sm:text-3xl">Secure Checkout<span className="mt-2 block h-1 w-10 bg-indigo-600  sm:w-20"></span></h1>
@@ -33,7 +48,7 @@ const CheckOut = ({onCheckOutBook}) => {
             <div><label for="card-name" className="sr-only">Card name</label><input type="text" id="card-name" name="card-name" placeholder="Name on the card" className="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-indigo-500" /></div>
             </form>
             <p className="mt-10 text-center text-sm font-semibold text-gray-500">By placing this order you agree to the <a href="#" className="whitespace-nowrap text-indigo-400 underline hover:text-indigo-600">Terms and Conditions</a></p>
-            <button type="submit" className="mt-4 inline-flex w-full items-center justify-center rounded bg-indigo-600 py-2.5 px-4 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-indigo-500 sm:text-lg">Place Order</button>
+            <button type="submit" onClick={handlePlaceOrder} className="mt-4 inline-flex w-full items-center justify-center rounded bg-indigo-600 py-2.5 px-4 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-indigo-500 sm:text-lg">Place Order</button>
         </div>
         </div>
         <div className="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
