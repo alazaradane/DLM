@@ -4,6 +4,7 @@ import BookList from '../components/BookList'
 import { useState } from 'react'
 import { initalBook } from '../constants'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../components/Spinner'
 
 const Books = ({userName, userEmail}) => {
 
@@ -56,7 +57,9 @@ const Books = ({userName, userEmail}) => {
             {userName && userEmail ? (
               <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
                 ) : (
-                <div>Loading...</div>
+                <div className=' flex items-center justify-center p-15 m-20'>
+                  <Loading/>
+                </div>
             )}
         </div>
     </section>

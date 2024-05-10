@@ -6,19 +6,25 @@ import Category from '../components/Category'
 import Banner from "./Banner";
 import CartModal from '../components/CartModal'
 import { useState } from "react";
+import { initalBook } from "../constants";
 
 
 const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategoryChange, cartItems }) => {
 
-
+  
   const [selectedBooks, setSelectedBooks] = useState([]); 
   const [showModal, setShowModal] = useState(false);
 
   const handleShopIconClick = () => {
     setShowModal(!showModal); 
-    setSelectedBooks(Object.values(cartItems));
-    console.log(cartItems);
+    const selectedBookData = Object.keys(cartItems).map(bookId => {
+      const selectedBook = initalBook.find(book => book.id.toString() === bookId);
+      return selectedBook;
+    });
+    setSelectedBooks(selectedBookData);
   };
+  console.log(cartItems)
+  
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -60,7 +66,7 @@ const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategory
           <Banner/>
         </div>
         {showModal && (
-        <CartModal selectedBooks={Object.values(cartItems)} onCloseModal={handleCloseModal} />
+        <CartModal selectedBooks={selectedBooks} onCloseModal={handleCloseModal} />
       )}
       </section>
     )
