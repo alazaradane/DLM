@@ -4,8 +4,9 @@ import BookList from '../components/BookList'
 import { useState } from 'react'
 import { initalBook } from '../constants'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../components/Spinner'
 
-const Books = ({userName, userEmail}) => {
+const Books = ({userName, userEmail, onSelectedBooksChange}) => {
 
   const [cartItems, setCartItems] = useState({});
   const [searchField, setSearchField] = useState('');
@@ -50,13 +51,15 @@ const Books = ({userName, userEmail}) => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
+            <BookSearch onSelectedBooksChange={onSelectedBooksChange} cartItems={cartItems} userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
         </div>
         <div>         
             {userName && userEmail ? (
               <BookList onBookClick={handleBookClick} books={filteredBooks} handleAddToCart={handleAddToCart} cartItems={cartItems} />
                 ) : (
-                <div>Loading...</div>
+                <div className=' flex items-center justify-center p-15 m-20'>
+                  <Loading/>
+                </div>
             )}
         </div>
     </section>

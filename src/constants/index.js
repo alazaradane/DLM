@@ -38,27 +38,27 @@ export const navigation = [
 //feature 
 export const features = [
     {
-      name: 'Push to deploy',
+      name: 'Personalized Recommendations',
       description:
-        'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+        'Provide users with personalized book recommendations based on their reading history, preferences, and genres they enjoy.',
       icon: CloudArrowUpIcon,
     },
     {
-      name: 'SSL certificates',
+      name: 'Reading Lists',
       description:
-        'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+        'Enable users to create and manage reading lists where they can save books they want to read or have already read. ',
       icon: LockClosedIcon,
     },
     {
-      name: 'Simple queues',
+      name: 'Advanced Search',
       description:
-        'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+        'Implement an advanced search feature that allows users to easily find books by various criteria such as title, author, genre, publication date, and more.',
       icon: ArrowPathIcon,
     },
     {
       name: 'Advanced security',
       description:
-        'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+        'We use industry-standard security measures to safeguard your information.',
       icon: FingerPrintIcon,
     },
   ]
@@ -82,7 +82,7 @@ export const SITEMAP = [
   },
   {
     title: "Resources",
-    links: ["Blog", "Newsletter", "Free Products", "Affiliate Program"],
+    links: ["Blog", "Newsletter", "Free Products", "Program"],
   },
   {
     title: "Products",
