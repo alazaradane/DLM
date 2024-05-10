@@ -50,7 +50,7 @@ const Books = ({userName, userEmail}) => {
   return (
     <section id="books">
         <div className=' flex  justify-center '> 
-            <BookSearch userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
+            <BookSearch cartItems={cartItems} userName={userName} userEmail={userEmail} cartCounter={cartItemCount} onInputChange={handleInputChange} onCategoryChange = {handleCategoryChange} onCartChange ={handleShowCart}/>
         </div>
         <div>         
             {userName && userEmail ? (

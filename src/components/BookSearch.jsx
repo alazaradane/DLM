@@ -4,9 +4,26 @@ import { FaSearch } from "react-icons/fa";
 import ShoppingCartIcon from "./ShoppingCartIcon";
 import Category from '../components/Category'
 import Banner from "./Banner";
+import CartModal from '../components/CartModal'
+import { useState } from "react";
 
 
-const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategoryChange }) => {
+const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategoryChange, cartItems }) => {
+
+
+  const [selectedBooks, setSelectedBooks] = useState([]); 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShopIconClick = () => {
+    setShowModal(!showModal); 
+    setSelectedBooks(Object.values(cartItems));
+    console.log(cartItems);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
     return (
       <section id="#search" className=" max-container flex flex-col mt-4 items-center  ">
         <div className=" max-container flex items-center gap-[10rem]">
@@ -18,7 +35,7 @@ const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategory
             <FaSearch/>
           </div>
           <div className=" flex items-center gap-3 ">
-           { cartCounter && <ShoppingCartIcon itemCount={cartCounter}/>}
+           { cartCounter && <ShoppingCartIcon onClick={handleShopIconClick} itemCount={cartCounter}/>}
            {userName && <p className="font-bold font-roboto">Hi, {userName}</p>}
           </div>
         </div>
@@ -42,6 +59,9 @@ const BookSearch = ({userEmail, userName, cartCounter, onInputChange, onCategory
         <div className=" w-full">
           <Banner/>
         </div>
+        {showModal && (
+        <CartModal selectedBooks={Object.values(cartItems)} onCloseModal={handleCloseModal} />
+      )}
       </section>
     )
   }
