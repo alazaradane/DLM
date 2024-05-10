@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Boost = () => {
     return (
       <div className="bg-white">
@@ -25,7 +26,8 @@ const Boost = () => {
                 Start using our app today.
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+                Boost your productivity.
+                Start using our app today.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
@@ -41,11 +43,11 @@ const Boost = () => {
             </div>
             <div className="relative mt-16 h-80 lg:mt-8">
               <img
-                className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-cover bg-center bg-white/5 ring-1 ring-white/10"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST1FuZTm6ncnjVEXOmanwG7mS3lAm8n9zr4Q&s"
                 alt="App screenshot"
-                width={1824}
-                height={1080}
+                width={1820}
+                height={1050}
               />
             </div>
           </div>

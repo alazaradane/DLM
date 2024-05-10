@@ -21,6 +21,7 @@ import error from '../images/404Error.png'
 
 
 
+
 export{
     logo,
     dashboardIcon,
@@ -39,5 +40,5 @@ export{
     book2,
     book3,
     banner,
-    error
+    error,
 }
