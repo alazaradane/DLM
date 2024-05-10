@@ -7,6 +7,7 @@ import Admin from './Admins/Admin'
 import Books from './pages/Books'
 import BookDetail from './components/BookDetail'
 import { useState } from 'react'
+import CheckOut from './components/CheckOut'
 const App = () => {
 
   const [userData, setUserData] = useState({});
@@ -25,6 +26,7 @@ const App = () => {
       <Route path='/admin/*' element={<Admin/>}/>
       <Route path='/books' element={<Books userName={userData.name} userEmail={userData.email}/>}/>
       <Route path="/books/:bookId" element={<BookDetail />} />
+      <Route path='/checkout' element={<CheckOut/>}/>
     </Routes>
   )
 }
