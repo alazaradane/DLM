@@ -7,6 +7,14 @@ const CheckOut = ({onCheckOutBook}) => {
     console.log(onCheckOutBook)
     const [showToast, setShowToast] = useState(false);
 
+    const calculateTotalPrice = () => {
+        const subtotal = onCheckOutBook.reduce((acc, book) => acc + book.price, 0);
+        const vatAmount = subtotal * 0.1;
+        const totalPrice = subtotal + vatAmount;
+
+        return totalPrice.toFixed(2); 
+    };
+
     const handlePlaceOrder = () => {
         setShowToast(true);
         setTimeout(() => {
@@ -68,21 +76,21 @@ const CheckOut = ({onCheckOutBook}) => {
                                             <p className="text-sm font-medium text-white text-opacity-80">{book.detail}</p>
                                         </div>
                                     </div>
-                                    <p className="text-sm font-semibold text-white">$260.00</p>
+                                    <p className="text-sm font-semibold text-white">${book.price}</p>
                                 </li>
                             ))}
             
             </ul>
             <div className="my-5 h-0.5 w-full bg-white bg-opacity-30"></div>
             <div className="space-y-2">
-            <p className="flex justify-between text-lg font-bold text-white"><span>Total price:</span><span>$510.00</span></p>
-            <p className="flex justify-between text-sm font-medium text-white"><span>Vat: 10%</span><span>$55.00</span></p>
+            <p className="flex justify-between text-lg font-bold text-white"><span>Total price: ${calculateTotalPrice()}</span></p>
+            <p className="flex justify-between text-sm font-medium text-white"><span>Vat: 10%</span></p>
             </div>
         </div>
         <div className="relative mt-10 text-white">
             <h3 className="mb-5 text-lg font-bold">Support</h3>
-            <p className="text-sm font-semibold">+01 653 235 211 <span className="font-light">(International)</span></p>
-            <p className="mt-1 text-sm font-semibold">support@nanohair.com <span className="font-light">(Email)</span></p>
+            <p className="text-sm font-semibold">+251911361466 <span className="font-light"></span></p>
+            <p className="mt-1 text-sm font-semibold">support@alazaradane.com <span className="font-light"></span></p>
             <p className="mt-2 text-xs font-medium">Call us now for payment related issues</p>
         </div>
         <div className="relative mt-10 flex">
