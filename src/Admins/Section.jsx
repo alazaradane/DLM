@@ -14,7 +14,7 @@ import { Dialog } from 'primereact/dialog';
 import BookModal from '../components/BookModal'
 import {initalBook}  from '../constants'
 import EditBookFormModal from '../components/EditBookFormModal'
-
+import AddBookModal from '../components/AddBookModal'
         
 
 const Books = () => {
@@ -26,7 +26,20 @@ const Books = () => {
 
   const [BookModalVisible, setBookModalVisible] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState('');
+  const [addBookModal, setAddBookModal] = useState(false)
+  const [newBookData, setNewBookData] = useState({});
 
+  const onAddNewBook = (newBook) => {
+    setdataBook(prevData => [...prevData, newBook]);
+    setNewBookData(false); 
+  };
+
+  const onCancelAdd = () => {
+    setNewBookData(false); 
+    setAddBookModal(false)
+  };
+
+  
 
   const menu = useRef(null);
     const items = [
@@ -37,6 +50,7 @@ const Books = () => {
                 {
                     label: 'Add',
                     icon: 'pi pi-plus',
+                    command: ()=>setAddBookModal(true)
                 },
                 {
                     label: 'Import',
@@ -153,6 +167,15 @@ const Books = () => {
                 onSave={onSaveEdit}
                 bookData={selectedStudent}
             />
+        </div>
+        <div>
+          <AddBookModal
+            visible={addBookModal}
+            onAdd={onAddNewBook}
+            onHide = { ()=>setAddBookModal(false)}
+            onCancel={onCancelAdd}
+            
+        />
         </div>
           
         </div>
