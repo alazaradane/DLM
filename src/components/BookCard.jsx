@@ -12,7 +12,7 @@ const BookCard = ({book,  handleAddToCart, cartItems, onBookClick }) => {
   if(!book){
     return null
   }
-  const { id, name, image, category, author, description } = book;
+  const { id, name, image, category, author, description, price } = book;
   console.log(book);
   
   const inCart = cartItems[book.id] ? true : false;
@@ -44,8 +44,9 @@ const BookCard = ({book,  handleAddToCart, cartItems, onBookClick }) => {
             </ExpandableText>
           </p>
         </div>
-        <div>
+        <div className=' flex items-center gap-5'>
           <p className=' text-md text-slate-700 font-semibold font-sans pl-3'> {author}</p>
+          <p className=' text-md text-slate-700 font-semibold font-sans pl-3'>$ {price}</p>
         </div>
         <div className=' px-3 py-2 flex justify-around items-center'>
           <span className=' inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-sm font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10'>{category}</span>

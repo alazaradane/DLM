@@ -127,6 +127,7 @@ const Books = () => {
             } sortable />
             <Column field='name' header='Name' sortable editor={(props) => inputTextEditor(props, 'name')}  />
             <Column field='category' header='Category' sortable/>
+            <Column field='price' header='Price' sortable/>
             <Column field='description' header='Description' sortable/>
             <Column field='file' header='File' sortable/>
             {/* <Column field='section' header='Section' sortable/> */}
