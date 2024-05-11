@@ -115,7 +115,7 @@ const Books = () => {
         <div className=' mt-5'>
           <DataTable value={dataBook} filters={filters}  selectionMode=" multiple" selection={selectedStudents} onSelectionChange={onSelectionChange} sortMode='multiple'
             paginator
-            rows={20}
+            rows={7}
             rowsPerPageOptions={[1,2,3,4,5,6,7,8,9]}
             totalRecords={5} >
             <Column selectionMode="multiple" style={{ width: '3em', border:'1rem', borderColor:"#000" }} />
