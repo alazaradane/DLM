@@ -17,12 +17,32 @@ import book2 from '../images/book2.jpeg'
 import book3 from '../images/book3.jpeg'
 import banner from '../images/banner.png'
 import error from '../images/404Error.png'
+import atomic from '../images/atomic.jpg'
+import code from '../images/code.jpg'
+import dune   from '../images/dune.jpeg'
+import educated from '../images/educated.jpg'
+import hunger from '../images/hunger.jpg'
+import martian from '../images/martian.jpeg'
+import neuro from '../images/neuro.jpg'
+import ready from '../images/ready.jpg'
+import snow from '../images/snow.jpg'
+import watchmen from '../images/watchmen.jpeg'
 
 
 
 
 
-export{
+export {
+    atomic,
+    code,
+    dune,
+    educated,
+    hunger,
+    martian,
+    neuro,
+    ready,
+    snow,
+    watchmen,
     logo,
     dashboardIcon,
     student,

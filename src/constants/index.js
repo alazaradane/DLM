@@ -1,5 +1,5 @@
 
-import { book1, book2,book3, school, section, student, user1, user2,user3,user4,user5 } from "../assets/images";
+import { atomic, book1, book2,book3, code, dune, educated, hunger, martian, neuro, ready, school, section, snow, student, user1, user2,user3,user4,user5, watchmen } from "../assets/images";
 import { CloudArrowUpIcon,LockClosedIcon,ArrowPathIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
 
 
@@ -111,16 +111,16 @@ export const initalDataStud = [
 ]
 
 export const initalBook = [
-    {id:1,image:book1, name:'The Martian', category:'fiction', author:"Andy Weir",description:'A gripping tale of survival on Mars after an astronaut is left behind by his crew.', file:'file'},
-    {id:2, image:book1,name:'Atomic Habits', category:'self-help',author:"Human Being", description:'James Clear', file:'file'},
-    {id:3,image:book2,name:'Educated', category:'General',author:"Tara Westover", description:'Tara Westovers remarkable journey from growing up in a strict and isolated household in rural Idaho to pursuing higher education against all odds. ', file:'file'},
-    {id:4,image:book1,name:'Watchmen', category:'commic',author:"Alan Moore and Dave Gibbons", description:'graphic novel deconstructs the superhero genre while exploring complex themes such as power, morality', file:'file'},
-    {id:5,image:book3,name:'Dune', category:'fiction',author:" Frank Herbert", description:'A classic science fiction novel set in a distant future where noble houses vie for control over a desert planet.', file:'file'},
-    {id:6,image:book2,name:'The Code Book', category:'STEM',author:"Simon Singh", description:'explores the history and significance of codes and ciphers throughout human civilization', file:'file'},
-    {id:7,image:book1,name:'Neuromancer', category:'fiction',author:"William Gibson", description:'A groundbreaking cyberpunk novel that explores themes of artificial intelligence and virtual reality.', file:'file'},
-    {id:8,image:book3,name:'Snow Crash', category:'fiction',author:"Neal Stephenson", description:'A fast-paced adventure set in a dystopian future where virtual reality and the real world collide.', file:'file'},
-    {id:9,image:book2,name:'The Hunger Games', category:'fiction',author:"Suzanne Collins", description:'A dystopian novel set in a future where children are forced to fight to the death in a televised spectacle.', file:'file'},
-    {id:10,image:book1,name:'Ready Player One', category:'fiction',author:"Ernest Cline", description:'A thrilling adventure set in a virtual reality world where the protagonist embarks on a quest to find hidden treasure.', file:'file'},
+    {id:1,image:martian, name:'The Martian', category:'fiction', author:"Andy Weir",description:'A gripping tale of survival on Mars after an astronaut is left behind by his crew.', file:'file'},
+    {id:2, image:atomic,name:'Atomic Habits', category:'self-help',author:"Human Being", description:'James Clear', file:'file'},
+    {id:3,image:educated,name:'Educated', category:'General',author:"Tara Westover", description:'Tara Westovers remarkable journey from growing up in a strict and isolated household in rural Idaho to pursuing higher education against all odds. ', file:'file'},
+    {id:4,image:watchmen,name:'Watchmen', category:'commic',author:"Alan Moore and Dave Gibbons", description:'graphic novel deconstructs the superhero genre while exploring complex themes such as power, morality', file:'file'},
+    {id:5,image:dune,name:'Dune', category:'fiction',author:" Frank Herbert", description:'A classic science fiction novel set in a distant future where noble houses vie for control over a desert planet.', file:'file'},
+    {id:6,image:code,name:'The Code Book', category:'STEM',author:"Simon Singh", description:'explores the history and significance of codes and ciphers throughout human civilization', file:'file'},
+    {id:7,image:neuro,name:'Neuromancer', category:'fiction',author:"William Gibson", description:'A groundbreaking cyberpunk novel that explores themes of artificial intelligence and virtual reality.', file:'file'},
+    {id:8,image:snow,name:'Snow Crash', category:'fiction',author:"Neal Stephenson", description:'A fast-paced adventure set in a dystopian future where virtual reality and the real world collide.', file:'file'},
+    {id:9,image:hunger,name:'The Hunger Games', category:'fiction',author:"Suzanne Collins", description:'A dystopian novel set in a future where children are forced to fight to the death in a televised spectacle.', file:'file'},
+    {id:10,image:ready,name:'Ready Player One', category:'fiction',author:"Ernest Cline", description:'A thrilling adventure set in a virtual reality world where the protagonist embarks on a quest to find hidden treasure.', file:'file'},
     {id:11,image:book3,name:'The Hitchhikers Guide to the Galaxy', category:'fiction',author:"Douglas Adams", description:' A comedic science fiction series following the misadventures of an ordinary human and his alien friend as they travel through space.', file:'file'},
     {id:12,image:book2,name:'The Left Hand of Darkness', category:'fiction',author:"Ursula K. Le Guin", description:'A thought-provoking novel set on a planet where the inhabitants can change gender at will.', file:'file'},
     {id:13,image:book1,name:'Hyperion', category:'fiction',author:"Dan Simmons ", description:'The first book in a science fiction series that weaves together multiple storylines set in a universe on the brink of war.', file:'file'},
